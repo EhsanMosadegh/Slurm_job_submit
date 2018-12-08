@@ -38,11 +38,13 @@
 #SBATCH --mail-user=ehsanm@dri.edu
 
 ##---------------------------------------------------------
+
 hostname
 date
 
 module load intel/compiler/64/2018/18.0.1
 module list 
+
 echo "===================================================="
 echo "***** Some runtime informartiuon *****"
 echo "===> Total number of nodes in the job's resource allocation is = $SLURM_JOB_NUM_NODES"
@@ -64,7 +66,7 @@ echo “===> job script starts here...”
 
 ##setenv I_MPI_PMI_LIBRARY "/cm/shared/apps/slurm/17.02.2/lib64/libpmi.so"
 
-./run_cctm_CA.csh 
+source ../run_cctm_CA.csh 
 
 echo “===> job script ends here...”
 
