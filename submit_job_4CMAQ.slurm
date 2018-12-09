@@ -8,12 +8,11 @@
 #SBATCH --cpus-per-task=32
 #SBATCH --hint=compute_bound
 
-##SBATCH --threads-per-core=2
-
-## --- threaded/processors 
+## --- multi-processor/threaded
 ##SBATCH --ntasks=1
 ##SBATCH --cpus-per-task=8 
 ##SBATCH --hint=compute_bound
+##SBATCH --threads-per-core=2
 
 # --- MPI
 ##SBATCH --ntasks=128
@@ -21,8 +20,6 @@
 ##SBATCH --nodes=16
 ##SBATCH --ntasks-per-node=8
 ##SBATCH --ntasks-per-socket=4
-
-##SBATCH --ntasks-per-node=16
 
 ##SBATCH --mem=1gb                                # Job memory request
 #SBATCH --mem-per-cpu=2625M        		 # Allocate 3.5GB of memory per CPU
