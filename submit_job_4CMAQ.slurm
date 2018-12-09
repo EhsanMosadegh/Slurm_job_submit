@@ -3,9 +3,9 @@
 #SBATCH --job-name=CMAQ53			       
 
 ## --- hybrid 
-#SBATCH --nodes=4
-#SBATCH --ntasks=4
-#SBATCH --cpus-per-task=32
+#SBATCH --nodes=2
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=8
 #SBATCH --hint=compute_bound
 
 ## --- multi-processor/threaded
@@ -47,10 +47,10 @@ echo "===> Name of the partition in which the job is running is = $SLURM_JOB_PAR
 echo "===> List of nodes allocated to the job is = $SLURM_JOB_NODELIST"
 
 #echo "===> Number of cpus requested per task is = $SLURM_CPUS_PER_TASK (=cores)"
-echo "===> Number of CPUS on the allocated node is = $SLURM_CPUS_ON_NODE (hyperthread)"
+echo "===> Number of hyperthreaded CPUS on each allocated node is = $SLURM_CPUS_ON_NODE"
 echo "===> Count of processors available to the job on this node is = $SLURM_JOB_CPUS_PER_NODE"
 echo "===> Name of the job is = $SLURM_JOB_NAME"
-echo "===> Memory per cpu is = $SLURM_MEM_PER_CPU"
+echo "===> Memory per cpu is = $SLURM_MEM_PER_CPU MB"
 echo "===> The MPI rank (or relative process ID) of the current process is = $SLURM_PROCID"
 echo "===> The directory from which sbatch was invoked is = $SLURM_SUBMIT_DIR"
 echo "===> The hostname of the computer from which sbatch was invoked is = $SLURM_SUBMIT_HOST"
